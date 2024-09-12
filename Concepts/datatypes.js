@@ -12,3 +12,12 @@ console.log(true);
 console.log(typeof true);
 console.log(false);
 console.log(typeof false);
+
+console.log('hello');
+console.log(typeof 'hello');
+
+console.log(undefined);
+console.log(typeof undefined);
+console.log(typeof null);
+console.log(typeof [1,2,3]);
+console.log(typeof { name: 'john'});
