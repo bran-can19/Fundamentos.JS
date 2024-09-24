@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #289999;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: 2px;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .block {
+            padding: 10px;
+            background-color: #0788b3;
+            border-radius: 8px;
+            width: 100px;
+            text-align: center;
+        }
+        .results {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        img {
+            width: 100px;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Vamos a Jugar Piedra Papel o Tijera!🎮</h1>
+        <div class="options">
+            <img src="./piedra papel o tijera/Piedra.jpeg" alt="Piedra" onclick="playerSelect('Piedra')">
+            <img src="./piedra papel o tijera/Papel" alt="Papel" onclick="playerSelect('Papel')">
+            <img src="./piedra papel o tijera/Tijera.jpeg" alt="Tijera" onclick="playerSelect('Tijera')">
+        </div>
+        <div class="results">
+            <div id="playerChoice" class="block">Usuario: </div>
+            <div id="machineChoice" class="block">Máquina: </div>
+        </div>
+        <div class="result" id="result"></div>
+    </div>
+    <script>
+        function playerSelect(playerChoice) {
+            const choices = ['Piedra', 'Papel', 'Tijera'];
+            const machineChoice = choices[Math.floor(Math.random() * choices.length)];
+
+            document.getElementById('playerChoice').textContent = `Usuario: ${playerChoice}`;
+            document.getElementById('machineChoice').textContent = `Máquina: ${machineChoice}`;
+
+            let result = '';
+
+            switch (playerChoice + machineChoice) {
+                case 'PiedraPiedra':
+                case 'PapelPapel':
+                case 'TijeraTijera':
+                    result = 'Empate!😮‍💨';
+                    break;
+                case 'PiedraTijera':
+                case 'PapelPiedra':
+                case 'TijeraPapel':
+                    result = 'Jugador Gana!👦🏻';
+                    break;
+                case 'PiedraPapel':
+                case 'PapelTijera':
+                case 'TijeraPiedra':
+                    result = 'Máquina Gana!🤖';
+                    break;
+            }
+
+            document.getElementById('result').textContent = `Resultado: ${result}`;
+        }
+    </script>
+</body>
+</html>
