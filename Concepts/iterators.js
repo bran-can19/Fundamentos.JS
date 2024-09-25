@@ -119,4 +119,4 @@ const fruits = ['🍎', '🍐', '🍊', '🍑', '🍒'];
 const index_durazno =fruits.findIndex(f => f === '🍒');
 console.log (fruits[index_durazno]);
 
-fruits.
+
