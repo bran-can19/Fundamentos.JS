@@ -6,30 +6,56 @@
     <title>Fundamentos Javascript</title>
     <style>
         body {
-            margin:0;
-            padding:0;
-            display:grid;
-            width:100vw;
-            height:100vh;
-            place-items:center;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            place-items: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             text-align: center;
         }
-        div{
-            width:300px;
-            height:300px;
-            border-radius:50%;
+        .container {
+            background-color: #ffffff; /* Color de fondo del cuadro */
+            padding: 20px; /* Espaciado interno */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra del cuadro */
+            border-radius: 10px; /* Bordes redondeados */
+            position: relative; /* Para el botón */
+        }
+        .circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
             border: 1px solid rgb(48, 17, 183);
-            display:grid;
-            place-items:center;
+            display: grid;
+            place-items: center;
+        }
+        button {
+            position: absolute; /* Cambiado a absoluto */
+            top: -40px; /* Ajusta esto para mover el botón arriba */
+            left: 50%;
+            transform: translateX(-50%); /* Centra el botón horizontalmente */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(48, 17, 183);
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(30, 10, 120);
         }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Mi Bola Magica!!
-        </h1>
+    <div class="container">
+        <button id="regresar"><a href="./ball.html"></a>Regresar al Menú</button>
+        <div class="circle">
+            <a href=".//ball.html"></a>
+            <h1>Mi Bola Magica!!</h1>
+        </div>
     </div>
     <script src="./app.js"></script>
 </body>
 </html>
+

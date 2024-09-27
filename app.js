@@ -5,7 +5,7 @@ const message = document.querySelector('h1');
 const eightball = () => {
     // Crear número aleatorio (0 - 7)
     const number = Math.floor(Math.random() * 8);
-    
+
     // Usar switch/case para mensajes distintos
     switch (number) {
         case 0:

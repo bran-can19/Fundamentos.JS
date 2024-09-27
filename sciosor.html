@@ -36,7 +36,7 @@
         }
         .block {
             padding: 10px;
-            background-color: #0788b3;
+            background-color: #289999;;
             border-radius: 8px;
             width: 100px;
             text-align: center;
@@ -61,10 +61,24 @@
         img:hover {
             transform: scale(1.1);
         }
+        .back-button {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #289999;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .back-button:hover {
+            background-color: #dedede;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <button class="back-button"><a href="./ball.html">Regresar</a></button>
         <h1>¡Vamos a Jugar Piedra Papel o Tijera!🎮</h1>
         <div class="options">
             <img src="./piedra papel o tijera/Piedra.jpeg" alt="Piedra" onclick="playerSelect('Piedra')">
@@ -106,6 +120,12 @@
             }
 
             document.getElementById('result').textContent = `Resultado: ${result}`;
+        }
+
+        function resetGame() {
+            document.getElementById('playerChoice').textContent = `Usuario: `;
+            document.getElementById('machineChoice').textContent = `Máquina: `;
+            document.getElementById('result').textContent = `Resultado: `;
         }
     </script>
 </body>
